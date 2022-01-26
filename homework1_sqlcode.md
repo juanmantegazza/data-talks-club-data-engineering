@@ -1,3 +1,5 @@
+## SQL code for homework #1
+
 ### Question 3
 
 ```sql
@@ -50,3 +52,33 @@ LIMIT
 ```
 
 ### Question 6
+
+```sql
+SELECT
+  AVG(trips.total_amount) AS avg_price,
+  trips.PULocationID,
+  trips.DOLocationID
+FROM
+  `aeros-sandbox-juani.projects.yellow_taxi_trips` AS trips
+GROUP BY
+  trips.PULocationID,
+  trips.DOLocationID
+ORDER BY
+  avg_price DESC
+LIMIT
+  1;
+
+SELECT
+  *
+FROM
+  `aeros-sandbox-juani.projects.yellow_taxi_zone`
+WHERE
+  LocationID = 4;
+
+SELECT
+  *
+FROM
+  `aeros-sandbox-juani.projects.yellow_taxi_zone`
+WHERE
+  LocationID = 265;
+```
